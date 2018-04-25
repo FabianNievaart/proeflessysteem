@@ -5,58 +5,84 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 </head>
 <body onresize="slider()">
-<!--nav bar-->
-<nav class="navbar">
-
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
+<!--login button-->
+    <nav class="navbar">
+        <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
     </nav>
 <!--slider-->
-    <div class="slider">Hi, i'm a full size slideshow</div>
-<!--body-->
-    <div class="container">
-
-
+    <div class="slider">
+        <a href="#blocken">
+            <img id="arrow" src="{{ asset('images/arrow.png') }}">
+        </a>
+    </div>
+<!--blocken-->
+    <div class="container" id="blocken">
         <div class="col-sm-3">
-            <div class="block">
-                <div class="test-image"><h1>ik ben een test foto</h1></div>
-                <div class="text">Lorem ipsum</div>
-            </div>
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
         </div>
         <div class="col-sm-3">
-            <div class="block">
-                <div class="test-image"><h1>ik ben een test foto</h1></div>
-                <div class="text">Lorem ipsum</div>
-            </div>
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
         </div>
         <div class="col-sm-3">
-            <div class="block">
-                <div class="test-image"><h1>ik ben een test foto</h1></div>
-                <div class="text">Lorem ipsum</div>
-            </div>
-        </div><div class="col-sm-3">
-            <div class="block">
-                <div class="test-image"><h1>ik ben een test foto</h1></div>
-                <div class="text">Lorem ipsum</div>
-            </div>
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
         </div>
         <div class="col-sm-3">
-            <div class="block">
-                <div class="test-image"><h1>ik ben een test foto</h1></div>
-                <div class="text">Lorem ipsum</div>
-            </div>
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
         </div>
         <div class="col-sm-3">
-            <div class="block">
-                <div class="test-image"><h1>ik ben een test foto</h1></div>
-                <div class="text">Lorem ipsum</div>
-            </div>
-
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
         </div>
+        <div class="col-sm-3">
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a class="a-block" href="#">
+                <div class="block">
+                    <div class="image"></div>
+                    <div class="text">Lorem ipsum</div>
+                </div>
+            </a>
+        </div>
+    </div>
+<!--javascript-->
     <script src="{{ asset('js/main.js') }}"></script>
 </body>
 {% endblock %}
