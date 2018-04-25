@@ -6,7 +6,7 @@ function slider() {
     document.getElementById("arrow").style.marginTop = h-40 + "px";
     document.getElementById("arrow").style.marginLeft = w2/2 + "px";
 
-    document.getElementsByClassName("slider")[0].innerHTML += '<p style="color: white;">Height: ' + h + '</p>';
+    // document.getElementsByClassName("slider")[0].innerHTML += '<p style="color: white;">Height: ' + h + '</p>';
 
 }
 slider();
