@@ -1,0 +1,43 @@
+.slider{
+    background-color: darkblue;
+    margin-bottom: 30px;
+}
+.test-image{
+    background-color: darkblue;
+    margin: 0;
+    height: 150px;
+    text-align: center;
+    padding-top: 20px;
+}
+.test-image h1{
+    color: white;
+    margin: 0;
+}
+.block {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    padding: 0;
+}
+.block:hover{
+    box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.2), 0 8px 26px 0 rgba(0, 0, 0, 0.2);
+}
+.block .text{
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.glyphicon{
+    color: black;
+}
+.glyphicon:hover{
+    color: darkblue;
+}
+.nav a{
+    color: #EEEEEE;
+}
+.nav a:hover:{
+    color: darkblue;
+}
+.slider{
+    margin-top: -73px;
+}
