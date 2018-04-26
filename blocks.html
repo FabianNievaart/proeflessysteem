@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<head>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+</head>
+<body onresize="slider()">
+<!--login button-->
+<nav class="navbar">
+    <a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+</nav>
+<!--slider-->
+<div class="slider">
+    <a href="#blocken">
+        <img id="arrow" src="{{ asset('images/arrow.png') }}">
+    </a>
+</div>
+<!--blocken-->
+<div class="container" id="blocken">
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-3">
+        <a class="a-block" href="#">
+            <div class="block">
+                <div class="image"></div>
+                <div class="text">Lorem ipsum</div>
+            </div>
+        </a>
+    </div>
+</div>
+{% include 'footer.html.twig' %}
+<!--javascript-->
+<script src="{{ asset('js/main.js') }}"></script>
+</body>
+{% endblock %}

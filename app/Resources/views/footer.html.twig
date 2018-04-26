@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-</body>
 {%  block footer %}
 <footer>
-        <div class="col-sm-4" style="background-color:lavenderblush;">
-            <img alt="vechtsportlogo" src="">
-        </div>
-        <div class="col-sm-8" style="background-color:lavenderblush;">
-            <ul class="usp">
-                <li>
-                    <h1>USP</h1>
-                </li>
-            </ul>
-        </div>
-
-        <div class="col-sm-4" style="background-color:lavenderblush;">
+    <div class="col-sm-4">
+        <img src="{{ asset('images/block-image.png') }}" alt="vechtsportlogo" height="60px">
+    </div>
+    <div class="col-sm-8">
+        <ul class="usp">
+            <li>
+                <h1>USP</h1>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div class="col-sm-4">
             <h2 id="paginastitle">Paginas</h2>
             <ul class="paginas">
                 <li>
@@ -39,7 +31,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-sm-4" style="background-color:lavenderblush;">
+        <div class="col-sm-4">
             <h2 id="clubstitle">Clubs</h2>
             <ul class="clubs">
                 <li>
@@ -59,22 +51,21 @@
                 </li>
             </ul>
         </div>
-        <div class="col-sm-4" style="background-color:lavenderblush;">
+        <div class="col-sm-4">
             <table id="info">
                 <h2 id="infotitle">Info</h2>
-                    <tr id="infotext">Info</tr>
+                <tr id="infotext">Info</tr>
             </table>
+        </div>
+        <div class="col-sm-12">Volg ons
+            <table>
+                <tr>
+                    <th>icon1</th>
+                    <th>icon2</th>
+                    <th>icon3</th>
+                </tr>
+            </table>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12" style="background-color:lavender;">Volg ons</div>
-    </div>
-    <table>
-        <tr>
-            <th>icon1</th>
-            <th>icon2</th>
-            <th>icon3</th>
-        </tr>
-    </table>
 </footer>
 {% endblock %}
-</html>
