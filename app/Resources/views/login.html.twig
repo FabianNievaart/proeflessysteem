@@ -1,18 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+    <head>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/css/uikit.min.css" />
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="E-mail">
-					<input type="password" name="pass" placeholder="Wachtwoord">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				  </form>
-				</div>
-			</div>
-		  </div>
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit-icons.min.js"></script>
+    </head>
 {% endblock %}
