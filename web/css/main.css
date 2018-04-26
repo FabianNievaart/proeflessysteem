@@ -1,3 +1,7 @@
+/* fonts */
+body {
+    font-family: 'Fira Sans', sans-serif;
+}
 /* login */
 .navbar a{
     text-decoration: none;
@@ -10,6 +14,7 @@
     /* color: lightgray; */
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.2);
 }
+
 /* slider */
 .slider{
     margin-top: -71px;
@@ -18,6 +23,30 @@
     background-repeat: no-repeat;
     background-size: auto;
     background-size: cover;
+}
+/* navbar sport pagina*/
+.nav {
+    background-color: #00005a;
+    height: 50px;
+
+
+}
+.nav li{
+    float: left;
+    color: #FFFFFF;
+    list-style-type: none;
+    width: 90px;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+.nav li:hover{
+    background-color: #3f2fa1;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+
 }
 /* blocken */
 .block{
