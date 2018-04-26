@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    </head>
+    <body>
+    <nav class="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="locatie">Locatie</a></li>
+            <li>Sportschool</li>
+            <li class="pull-right"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+    </nav>
+    <br>
+        <div class="head">
+            <h1>Naam van de Sportschool</h1>
+        </div>
+    
+    <!--footer-->
+    {% include 'footer.html.twig' %}
+    </body>
+{% endblock %}
