@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 class SportschoolController extends Controller
 {
     /**
-     * @Route("/sportschool", name="sportschoolpage")
+     * @Route("/sportschool", name="locatiepage")
      */
     public function indexAction(Request $request)
     {
