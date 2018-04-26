@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Docents list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Voornaam</th>
+                <th>Tussenvoegsel</th>
+                <th>Achternaam</th>
+                <th>Werkdagen</th>
+                <th>Vrijaanvraag</th>
+                <th>Vakantiedagen</th>
+                <th>Email</th>
+                <th>Telefoon</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for docent in docents %}
+            <tr>
+                <td><a href="{{ path('admin_docent_show', { 'id': docent.id }) }}">{{ docent.id }}</a></td>
+                <td>{{ docent.voornaam }}</td>
+                <td>{{ docent.tussenvoegsel }}</td>
+                <td>{{ docent.achternaam }}</td>
+                <td>{{ docent.werkdagen }}</td>
+                <td>{{ docent.vrijaanvraag }}</td>
+                <td>{{ docent.vakantiedagen }}</td>
+                <td>{{ docent.email }}</td>
+                <td>{{ docent.telefoon }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_docent_show', { 'id': docent.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_docent_edit', { 'id': docent.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_docent_new') }}">Create a new docent</a>
+        </li>
+    </ul>
+{% endblock %}

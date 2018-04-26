@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Klants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Voornaam</th>
+                <th>Tussenvoegsel</th>
+                <th>Achternaam</th>
+                <th>Email</th>
+                <th>Telefoon</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for klant in klants %}
+            <tr>
+                <td><a href="{{ path('admin_klant_show', { 'id': klant.id }) }}">{{ klant.id }}</a></td>
+                <td>{{ klant.voornaam }}</td>
+                <td>{{ klant.tussenvoegsel }}</td>
+                <td>{{ klant.achternaam }}</td>
+                <td>{{ klant.email }}</td>
+                <td>{{ klant.telefoon }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_klant_show', { 'id': klant.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_klant_edit', { 'id': klant.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_klant_new') }}">Create a new klant</a>
+        </li>
+    </ul>
+{% endblock %}
