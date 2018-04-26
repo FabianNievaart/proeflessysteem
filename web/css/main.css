@@ -13,13 +13,16 @@
 /* slider */
 .slider{
     margin-top: -71px;
-    margin-bottom: 30px;
     background: url("../images/slide-image.png");
     background-repeat: no-repeat;
     background-size: auto;
     background-size: cover;
 }
 /* blocken */
+.container{
+    padding-top: 30px;
+
+}
 .block{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
@@ -46,4 +49,35 @@
 .a-block:link{
     text-decoration: none;
     color: black;
+}
+/* Footer */
+footer{
+    background-color: rgb(0, 0, 90);
+    height: 450px;
+    color: white;
+    text-align: center;
+}
+footer ul{
+    list-style-type: none;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    margin-left: -30px;
+}
+footer a:hover{
+    text-decoration: none;
+    color: lightblue;
+}
+footer .top{
+    height: 100px;
+}
+footer img{
+    margin-top: 20px;
+}
+footer table{
+    margin-left: 550px;
+}
+.usp{
+    margin-top: 20px;
 }
