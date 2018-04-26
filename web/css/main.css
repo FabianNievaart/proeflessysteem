@@ -50,6 +50,48 @@
     text-decoration: none;
     color: black;
 }
+/* sportschool */
+.sport h1{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.sport .img{
+    height: 350px;
+}
+.sport .locatie{
+    height: 350px;
+}
+.sport .text{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.sport h3{
+    text-align: center;
+    font-size: 20px;
+    color: #000082;
+}
+.sport h1{
+    color: #000082;
+}
+.sport h2{
+    color: #000082;
+}
+.sport .proefles{
+    text-align: center;
+    background-color: #000082;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.maps{
+    background: url("../images/maps.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: cover;
+    padding-top: 800px;
+}
 /* Footer */
 footer{
     background-color: rgb(0, 0, 90);
@@ -76,9 +118,8 @@ footer img{
     margin-top: 20px;
 }
 footer table{
-    margin-left: 550px;
+    margin-left: 565px;
 }
 .usp{
     margin-top: 20px;
 }
-/* login */
