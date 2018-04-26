@@ -2,20 +2,135 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use AppBundle\Entity\Locatie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Locatie controller.
+ *
+ * @Route("admin/locatie")
+ */
 class LocatieController extends Controller
 {
     /**
-     * @Route("/locatie", name="locatiepage")
+     * Lists all locatie entities.
+     *
+     * @Route("/", name="admin_locatie_index")
+     * @Method("GET")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('locatie.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $em = $this->getDoctrine()->getManager();
+
+        $locaties = $em->getRepository('AppBundle:Locatie')->findAll();
+
+        return $this->render('locatie/index.html.twig', array(
+            'locaties' => $locaties,
+        ));
+    }
+
+    /**
+     * Creates a new locatie entity.
+     *
+     * @Route("/new", name="admin_locatie_new")
+     * @Method({"GET", "POST"})
+     */
+    public function newAction(Request $request)
+    {
+        $locatie = new Locatie();
+        $form = $this->createForm('AppBundle\Form\LocatieType', $locatie);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($locatie);
+            $em->flush();
+
+            return $this->redirectToRoute('admin_locatie_show', array('id' => $locatie->getId()));
+        }
+
+        return $this->render('locatie/new.html.twig', array(
+            'locatie' => $locatie,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a locatie entity.
+     *
+     * @Route("/{id}", name="admin_locatie_show")
+     * @Method("GET")
+     */
+    public function showAction(Locatie $locatie)
+    {
+        $deleteForm = $this->createDeleteForm($locatie);
+
+        return $this->render('locatie/show.html.twig', array(
+            'locatie' => $locatie,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing locatie entity.
+     *
+     * @Route("/{id}/edit", name="admin_locatie_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, Locatie $locatie)
+    {
+        $deleteForm = $this->createDeleteForm($locatie);
+        $editForm = $this->createForm('AppBundle\Form\LocatieType', $locatie);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_locatie_edit', array('id' => $locatie->getId()));
+        }
+
+        return $this->render('locatie/edit.html.twig', array(
+            'locatie' => $locatie,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Deletes a locatie entity.
+     *
+     * @Route("/{id}", name="admin_locatie_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, Locatie $locatie)
+    {
+        $form = $this->createDeleteForm($locatie);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($locatie);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('admin_locatie_index');
+    }
+
+    /**
+     * Creates a form to delete a locatie entity.
+     *
+     * @param Locatie $locatie The locatie entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm(Locatie $locatie)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('admin_locatie_delete', array('id' => $locatie->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+        ;
     }
 }

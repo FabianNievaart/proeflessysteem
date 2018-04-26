@@ -1,3 +1,31 @@
+app_proefles:
+    resource: "@AppBundle/Controller/ProeflesController.php"
+    type:     annotation
+
+app_proefles:
+    resource: "@AppBundle/Controller/ProeflesController.php"
+    type:     annotation
+
+app_docent:
+    resource: "@AppBundle/Controller/DocentController.php"
+    type:     annotation
+
+app_klant:
+    resource: "@AppBundle/Controller/KlantController.php"
+    type:     annotation
+
+app_sport:
+    resource: "@AppBundle/Controller/SportController.php"
+    type:     annotation
+
+app_locatie:
+    resource: "@AppBundle/Controller/LocatieController.php"
+    type:     annotation
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
