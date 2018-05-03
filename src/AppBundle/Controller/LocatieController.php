@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Locatie controller.
  *
- * @Route("admin/locatie")
+ * @Route("/admin/locatie")
  */
 class LocatieController extends Controller
 {

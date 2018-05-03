@@ -2,8 +2,8 @@ app_proefles:
     resource: "@AppBundle/Controller/ProeflesController.php"
     type:     annotation
 
-app_proefles:
-    resource: "@AppBundle/Controller/ProeflesController.php"
+app_locatiepagina:
+    resource: "@AppBundle/Controller/LocatiePaginaController.php"
     type:     annotation
 
 app_docent:
