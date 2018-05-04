@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<head>
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+</head>
+<body onresize="slider()">
+<!--blocken-->
+<div class="container">
+    <div class="row">
+        <a href="#">
+            <div class="col-sm-6"><div class="lesblock">Les</div></div>
+        </a>
+        <a href="#">
+        <div class="col-sm-6"><div class="lesblock">Proefles</div></div>
+        </a>
+    </div>
+    <div class="row">
+        <a href="#">
+        <div class="col-sm-6"><div class="lesblock">Les</div></div>
+        </a>
+        <a href="#">
+        <div class="col-sm-6"><div class="lesblock">Proefles</div></div>
+        </a>
+    </div>
+    <div class="row">
+        <a href="#">
+        <div class="col-sm-6"><div class="lesblock">Les</div></div>
+        </a>
+        <a href="#">
+        <div class="col-sm-6"><div class="lesblock">Proefles</div></div>
+        </a>
+    </div>
+</div>
+{% include 'footer.html.twig' %}
+<!--javascript-->
+<script src="{{ asset('js/main.js') }}"></script>
+</body>
+{% endblock %}

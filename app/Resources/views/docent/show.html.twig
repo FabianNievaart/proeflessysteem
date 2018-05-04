@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Docent</h1>
+
+    <table class="table table-hover table-condensed table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ docent.id }}</td>
+            </tr>
+            <tr>
+                <th>Voornaam</th>
+                <td>{{ docent.voornaam }}</td>
+            </tr>
+            <tr>
+                <th>Tussenvoegsel</th>
+                <td>{{ docent.tussenvoegsel }}</td>
+            </tr>
+            <tr>
+                <th>Achternaam</th>
+                <td>{{ docent.achternaam }}</td>
+            </tr>
+            <tr>
+                <th>Werkdagen</th>
+                <td>{{ docent.werkdagen }}</td>
+            </tr>
+            <tr>
+                <th>Vrijaanvraag</th>
+                <td>{{ docent.vrijaanvraag }}</td>
+            </tr>
+            <tr>
+                <th>Vakantiedagen</th>
+                <td>{{ docent.vakantiedagen }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ docent.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefoon</th>
+                <td>{{ docent.telefoon }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul  style="list-style-type: none;">
+        <li>
+            <a class="btn btn-primary" href="{{ path('admin_docent_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a class="btn btn-warning" href="{{ path('admin_docent_edit', { 'id': docent.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
