@@ -1,0 +1,152 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Proeflessen
+ *
+ * @ORM\Table(name="proeflessen")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProeflessenRepository")
+ */
+class Proeflessen
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="begintijd", type="string", length=10)
+     */
+    private $begintijd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="eindtijd", type="string", length=10)
+     */
+    private $eindtijd;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datum", type="string", length=255)
+     */
+    private $datum;
+
+	/**
+	 * @ORM\ManyToOne(targetEntity="Locatie", inversedBy="Locaties")
+	 * @ORM\JoinColumn(name="locatie_id", referencedColumnName="id")
+	 */
+	private $locatie_id;
+
+	/**
+	 * @ORM\ManyToOne(targetEntity="Sport", inversedBy="Sporten")
+	 * @ORM\JoinColumn(name="sport_id", referencedColumnName="id")
+	 */
+	private $sport_id;
+
+	/**
+	 * @ORM\ManyToOne(targetEntity="Docent", inversedBy="Docenten")
+	 * @ORM\JoinColumn(name="docent_id", referencedColumnName="id")
+	 */
+	private $docent_id;
+
+	/**
+	 * @ORM\ManyToOne(targetEntity="Klant", inversedBy="Klanten")
+	 * @ORM\JoinColumn(name="klant_id", referencedColumnName="id")
+	 */
+	private $klant_id;
+
+
+	/**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set begintijd
+     *
+     * @param string $begintijd
+     *
+     * @return Proeflessen
+     */
+    public function setBegintijd($begintijd)
+    {
+        $this->begintijd = $begintijd;
+
+        return $this;
+    }
+
+    /**
+     * Get begintijd
+     *
+     * @return string
+     */
+    public function getBegintijd()
+    {
+        return $this->begintijd;
+    }
+
+    /**
+     * Set eindtijd
+     *
+     * @param string $eindtijd
+     *
+     * @return Proeflessen
+     */
+    public function setEindtijd($eindtijd)
+    {
+        $this->eindtijd = $eindtijd;
+
+        return $this;
+    }
+
+    /**
+     * Get eindtijd
+     *
+     * @return string
+     */
+    public function getEindtijd()
+    {
+        return $this->eindtijd;
+    }
+
+    /**
+     * Set datum
+     *
+     * @param string $datum
+     *
+     * @return Proeflessen
+     */
+    public function setDatum($datum)
+    {
+        $this->datum = $datum;
+
+        return $this;
+    }
+
+    /**
+     * Get datum
+     *
+     * @return string
+     */
+    public function getDatum()
+    {
+        return $this->datum;
+    }
+}
+

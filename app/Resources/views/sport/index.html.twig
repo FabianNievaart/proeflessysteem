@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sports list</h1>
+
+    <table class="table table-hover table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Info</th>
+                <th>Foto</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sport in sports %}
+            <tr>
+                <td><a href="{{ path('admin_sport_show', { 'id': sport.id }) }}">{{ sport.id }}</a></td>
+                <td>{{ sport.naam }}</td>
+                <td>{{ sport.info }}</td>
+                <td>{{ sport.foto }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="btn btn-primary" href="{{ path('admin_sport_show', { 'id': sport.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-warning" href="{{ path('admin_sport_edit', { 'id': sport.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul style="list-style-type: none;">
+        <li>
+            <a class="btn btn-success" href="{{ path('admin_sport_new') }}">Create a new sport</a>
+        </li>
+        <li>
+            <a class="btn btn-primary" href="../">Back to admin page</a>
+        </li>
+    </ul>
+{% endblock %}

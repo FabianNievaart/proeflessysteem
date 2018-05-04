@@ -1,0 +1,238 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Klant
+ *
+ * @ORM\Table(name="klant")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\KlantRepository")
+ */
+class Klant
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="voornaam", type="string", length=255)
+     */
+    private $voornaam;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tussenvoegsel", type="string", length=20, nullable=true)
+     */
+    private $tussenvoegsel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="achternaam", type="string", length=255)
+     */
+    private $achternaam;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefoon", type="string", length=50)
+     */
+    private $telefoon;
+
+	/**
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="klant_id")
+	 */
+	private $proeflessen;
+
+	public function __construct()
+	{
+		$this->proeflessen = new ArrayCollection();
+	}
+
+	public function __toString() {
+		return (string)$this->getId();
+	}
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set voornaam
+     *
+     * @param string $voornaam
+     *
+     * @return Klant
+     */
+    public function setVoornaam($voornaam)
+    {
+        $this->voornaam = $voornaam;
+
+        return $this;
+    }
+
+    /**
+     * Get voornaam
+     *
+     * @return string
+     */
+    public function getVoornaam()
+    {
+        return $this->voornaam;
+    }
+
+    /**
+     * Set tussenvoegsel
+     *
+     * @param string $tussenvoegsel
+     *
+     * @return Klant
+     */
+    public function setTussenvoegsel($tussenvoegsel)
+    {
+        $this->tussenvoegsel = $tussenvoegsel;
+
+        return $this;
+    }
+
+    /**
+     * Get tussenvoegsel
+     *
+     * @return string
+     */
+    public function getTussenvoegsel()
+    {
+        return $this->tussenvoegsel;
+    }
+
+    /**
+     * Set achternaam
+     *
+     * @param string $achternaam
+     *
+     * @return Klant
+     */
+    public function setAchternaam($achternaam)
+    {
+        $this->achternaam = $achternaam;
+
+        return $this;
+    }
+
+    /**
+     * Get achternaam
+     *
+     * @return string
+     */
+    public function getAchternaam()
+    {
+        return $this->achternaam;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Klant
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set telefoon
+     *
+     * @param string $telefoon
+     *
+     * @return Klant
+     */
+    public function setTelefoon($telefoon)
+    {
+        $this->telefoon = $telefoon;
+
+        return $this;
+    }
+
+    /**
+     * Get telefoon
+     *
+     * @return string
+     */
+    public function getTelefoon()
+    {
+        return $this->telefoon;
+    }
+
+    /**
+     * Add proeflessen
+     *
+     * @param \AppBundle\Entity\Proeflessen $proeflessen
+     *
+     * @return Klant
+     */
+    public function addProeflessen(\AppBundle\Entity\Proeflessen $proeflessen)
+    {
+        $this->proeflessen[] = $proeflessen;
+
+        return $this;
+    }
+
+    /**
+     * Remove proeflessen
+     *
+     * @param \AppBundle\Entity\Proeflessen $proeflessen
+     */
+    public function removeProeflessen(\AppBundle\Entity\Proeflessen $proeflessen)
+    {
+        $this->proeflessen->removeElement($proeflessen);
+    }
+
+    /**
+     * Get proeflessen
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProeflessen()
+    {
+        return $this->proeflessen;
+    }
+}

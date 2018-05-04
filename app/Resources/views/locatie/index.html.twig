@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Locaties list</h1>
+
+    <table class="table table-hover table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Info</th>
+                <th>Plaatsnaam</th>
+                <th>Straatnaam</th>
+                <th>Foto</th>
+                <th>Postcode</th>
+                <th>Huisnummer</th>
+                <th>Adrestoevoeging</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for locatie in locaties %}
+            <tr>
+                <td><a href="{{ path('admin_locatie_show', { 'id': locatie.id }) }}">{{ locatie.id }}</a></td>
+                <td>{{ locatie.naam }}</td>
+                <td>{{ locatie.info }}</td>
+                <td>{{ locatie.plaatsnaam }}</td>
+                <td>{{ locatie.straatnaam }}</td>
+                <td>{{ locatie.foto }}</td>
+                <td>{{ locatie.postcode }}</td>
+                <td>{{ locatie.huisnummer }}</td>
+                <td>{{ locatie.adrestoevoeging }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="btn btn-primary" href="{{ path('admin_locatie_show', { 'id': locatie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-warning" href="{{ path('admin_locatie_edit', { 'id': locatie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul style="list-style-type: none;">
+        <li>
+            <a class="btn btn-success" href="{{ path('admin_locatie_new') }}">Create a new locatie</a>
+        </li>
+        <li>
+            <a class="btn btn-primary" href="../">Back to admin page</a>
+        </li>
+    </ul>
+{% endblock %}
