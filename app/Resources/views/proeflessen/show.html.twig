@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Proeflessen</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ proeflessen.id }}</td>
+            </tr>
+            <tr>
+                <th>Begintijd</th>
+                <td>{{ proeflessen.begintijd }}</td>
+            </tr>
+            <tr>
+                <th>Eindtijd</th>
+                <td>{{ proeflessen.eindtijd }}</td>
+            </tr>
+            <tr>
+                <th>Datum</th>
+                <td>{{ proeflessen.datum }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_proeflessen_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_proeflessen_edit', { 'id': proeflessen.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

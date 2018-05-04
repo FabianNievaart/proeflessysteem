@@ -33,7 +33,7 @@ class Locatie
     /**
      * @var string
      *
-     * @ORM\Column(name="info", type="text")
+     * @ORM\Column(name="info", type="string", length=255)
      */
     private $info;
 
@@ -80,13 +80,17 @@ class Locatie
     private $adrestoevoeging;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="Proefles", mappedBy="locatie_id")
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="locatie_id")
 	 */
 	private $proeflessen;
 
 	public function __construct()
 	{
 		$this->proeflessen = new ArrayCollection();
+	}
+
+	public function __toString() {
+		return (string)$this->getId();
 	}
 
 
@@ -295,11 +299,11 @@ class Locatie
     /**
      * Add proeflessen
      *
-     * @param \AppBundle\Entity\Proefles $proeflessen
+     * @param \AppBundle\Entity\Proeflessen $proeflessen
      *
      * @return Locatie
      */
-    public function addProeflessen(\AppBundle\Entity\Proefles $proeflessen)
+    public function addProeflessen(\AppBundle\Entity\Proeflessen $proeflessen)
     {
         $this->proeflessen[] = $proeflessen;
 
@@ -309,9 +313,9 @@ class Locatie
     /**
      * Remove proeflessen
      *
-     * @param \AppBundle\Entity\Proefles $proeflessen
+     * @param \AppBundle\Entity\Proeflessen $proeflessen
      */
-    public function removeProeflessen(\AppBundle\Entity\Proefles $proeflessen)
+    public function removeProeflessen(\AppBundle\Entity\Proeflessen $proeflessen)
     {
         $this->proeflessen->removeElement($proeflessen);
     }

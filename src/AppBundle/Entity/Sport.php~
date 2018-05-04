@@ -44,7 +44,7 @@ class Sport
     private $foto;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="Proefles", mappedBy="sport_id")
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="sport_id")
 	 */
 	private $proeflessen;
 

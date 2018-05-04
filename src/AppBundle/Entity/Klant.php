@@ -58,13 +58,17 @@ class Klant
     private $telefoon;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="Proefles", mappedBy="klant_id")
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="klant_id")
 	 */
 	private $proeflessen;
 
 	public function __construct()
 	{
 		$this->proeflessen = new ArrayCollection();
+	}
+
+	public function __toString() {
+		return (string)$this->getId();
 	}
 
 
@@ -201,11 +205,11 @@ class Klant
     /**
      * Add proeflessen
      *
-     * @param \AppBundle\Entity\Proefles $proeflessen
+     * @param \AppBundle\Entity\Proeflessen $proeflessen
      *
      * @return Klant
      */
-    public function addProeflessen(\AppBundle\Entity\Proefles $proeflessen)
+    public function addProeflessen(\AppBundle\Entity\Proeflessen $proeflessen)
     {
         $this->proeflessen[] = $proeflessen;
 
@@ -215,9 +219,9 @@ class Klant
     /**
      * Remove proeflessen
      *
-     * @param \AppBundle\Entity\Proefles $proeflessen
+     * @param \AppBundle\Entity\Proeflessen $proeflessen
      */
-    public function removeProeflessen(\AppBundle\Entity\Proefles $proeflessen)
+    public function removeProeflessen(\AppBundle\Entity\Proeflessen $proeflessen)
     {
         $this->proeflessen->removeElement($proeflessen);
     }

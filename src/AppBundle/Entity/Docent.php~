@@ -79,7 +79,7 @@ class Docent
     private $telefoon;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="Proefles", mappedBy="docent_id")
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="docent_id")
 	 */
 	private $proeflessen;
 

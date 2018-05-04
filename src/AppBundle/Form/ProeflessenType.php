@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProeflesType extends AbstractType
+class ProeflessenType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -22,7 +22,7 @@ class ProeflesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Proefles'
+            'data_class' => 'AppBundle\Entity\Proeflessen'
         ));
     }
 
@@ -31,7 +31,7 @@ class ProeflesType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_proefles';
+        return 'appbundle_proeflessen';
     }
 
 

@@ -58,7 +58,7 @@ class Klant
     private $telefoon;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="Proefles", mappedBy="klant_id")
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="klant_id")
 	 */
 	private $proeflessen;
 

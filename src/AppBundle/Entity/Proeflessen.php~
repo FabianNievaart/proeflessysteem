@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Proefles
+ * Proeflessen
  *
- * @ORM\Table(name="proefles")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ProeflesRepository")
+ * @ORM\Table(name="proeflessen")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProeflessenRepository")
  */
-class Proefles
+class Proeflessen
 {
     /**
      * @var int
@@ -67,7 +67,7 @@ class Proefles
 	private $klant_id;
 
 
-    /**
+	/**
      * Get id
      *
      * @return int
@@ -82,7 +82,7 @@ class Proefles
      *
      * @param string $begintijd
      *
-     * @return Proefles
+     * @return Proeflessen
      */
     public function setBegintijd($begintijd)
     {
@@ -106,7 +106,7 @@ class Proefles
      *
      * @param string $eindtijd
      *
-     * @return Proefles
+     * @return Proeflessen
      */
     public function setEindtijd($eindtijd)
     {
@@ -130,7 +130,7 @@ class Proefles
      *
      * @param string $datum
      *
-     * @return Proefles
+     * @return Proeflessen
      */
     public function setDatum($datum)
     {
@@ -148,100 +148,5 @@ class Proefles
     {
         return $this->datum;
     }
-
-    /**
-     * Set locatieId
-     *
-     * @param \AppBundle\Entity\Locatie $locatieId
-     *
-     * @return Proefles
-     */
-    public function setLocatieId(\AppBundle\Entity\Locatie $locatieId = null)
-    {
-        $this->locatie_id = $locatieId;
-
-        return $this;
-    }
-
-    /**
-     * Get locatieId
-     *
-     * @return \AppBundle\Entity\Locatie
-     */
-    public function getLocatieId()
-    {
-        return $this->locatie_id;
-    }
-
-    /**
-     * Set sportId
-     *
-     * @param \AppBundle\Entity\Sport $sportId
-     *
-     * @return Proefles
-     */
-    public function setSportId(\AppBundle\Entity\Sport $sportId = null)
-    {
-        $this->sport_id = $sportId;
-
-        return $this;
-    }
-
-    /**
-     * Get sportId
-     *
-     * @return \AppBundle\Entity\Sport
-     */
-    public function getSportId()
-    {
-        return $this->sport_id;
-    }
-
-    /**
-     * Set docentId
-     *
-     * @param \AppBundle\Entity\Docent $docentId
-     *
-     * @return Proefles
-     */
-    public function setDocentId(\AppBundle\Entity\Docent $docentId = null)
-    {
-        $this->docent_id = $docentId;
-
-        return $this;
-    }
-
-    /**
-     * Get docentId
-     *
-     * @return \AppBundle\Entity\Docent
-     */
-    public function getDocentId()
-    {
-        return $this->docent_id;
-    }
-
-    /**
-     * Set klantId
-     *
-     * @param \AppBundle\Entity\Klant $klantId
-     *
-     * @return Proefles
-     */
-    public function setKlantId(\AppBundle\Entity\Klant $klantId = null)
-    {
-        $this->klant_id = $klantId;
-
-        return $this;
-    }
-
-    /**
-     * Get klantId
-     *
-     * @return \AppBundle\Entity\Klant
-     */
-    public function getKlantId()
-    {
-        return $this->klant_id;
-    }
 }
+

@@ -1,5 +1,9 @@
-app_proefles:
-    resource: "@AppBundle/Controller/ProeflesController.php"
+app_admin:
+    resource: "@AppBundle/Controller/AdminController.php"
+    type:     annotation
+
+app_proeflessen:
+    resource: "@AppBundle/Controller/ProeflessenController.php"
     type:     annotation
 
 app_locatiepagina:

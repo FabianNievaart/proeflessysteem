@@ -80,7 +80,7 @@ class Locatie
     private $adrestoevoeging;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="Proefles", mappedBy="locatie_id")
+	 * @ORM\OneToMany(targetEntity="Proeflessen", mappedBy="locatie_id")
 	 */
 	private $proeflessen;
 
