@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Sports list</h1>
 
-    <table>
+    <table class="table table-hover table-condensed table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
@@ -23,10 +23,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_sport_show', { 'id': sport.id }) }}">show</a>
+                            <a class="btn btn-primary" href="{{ path('admin_sport_show', { 'id': sport.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_sport_edit', { 'id': sport.id }) }}">edit</a>
+                            <a class="btn btn-warning" href="{{ path('admin_sport_edit', { 'id': sport.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -35,9 +35,12 @@
         </tbody>
     </table>
 
-    <ul>
+    <ul style="list-style-type: none;">
         <li>
-            <a href="{{ path('admin_sport_new') }}">Create a new sport</a>
+            <a class="btn btn-success" href="{{ path('admin_sport_new') }}">Create a new sport</a>
+        </li>
+        <li>
+            <a class="btn btn-primary" href="../">Back to admin page</a>
         </li>
     </ul>
 {% endblock %}
